@@ -147,7 +147,7 @@ class NewExtractor(FeatureExtractor):
             ((next_x, next_y) in Actions.getLegalNeighbors(g, walls))
             for g in scared_ghosts_positions)
         # if there is no danger of ghosts then add the food feature
-        if not features["#-of-ghosts-1-step-away"] and food[next_x][next_y]:
+        if not features["#-of-active-ghosts-1-step-away"] and food[next_x][next_y]:
             features["eats-food"] = 1.0
 
         dist = closestFood((next_x, next_y), food, walls)
